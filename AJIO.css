@@ -1,0 +1,377 @@
+*{
+    margin: 0;
+    padding:0;
+}
+header{
+    margin:0px;
+}
+.nav div{
+    height: px;
+    background-color:black;
+    margin: 5px 0;
+    border-radius: 100px;
+}
+
+#Bar {
+   
+    width: 100%;
+    list-style: none;
+    background-color: lightgray;
+    display: flex;
+    justify-content:center;
+    color: black;
+    cursor: pointer;
+    text-decoration: line-through;
+    font-weight: bold;
+    font-size: 24px;
+
+}
+#Bar:hover{
+    background-color:wheat; 
+
+
+}
+.nav{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.nav{
+    position:absolute;
+    display:flexbox;
+    top: 8px; /* Adjusted for better visibility */
+    left: 10px; /* Adjusted for better visibility */
+    width: 40px;
+    height: 25px;
+}
+
+
+.cart {
+    width:30px;
+    nav-left:10px;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.cart{
+    position:absolute;
+    display:flexbox;
+    top: 8px; /* Adjusted for better visibility */
+    right: 10px; /* Adjusted for better visibility */
+    width: 40px;
+    height: 25px;
+
+}
+.add-to-cart-btn:hover {
+    background-color:#555;
+}
+
+.add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin:20px 87px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    font-size: 13px;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.menu {
+    width:100%;
+    list-style: none;
+    display:flex;
+    justify-content:space-evenly;
+    background-color: lightgray;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    display:inline-block;
+    justify-content:space-around;
+    padding: 14px 20px;
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Submenu */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border: 1px solid #ddd;
+    z-index: 1000;
+}
+
+
+/* Show the submenu when hovering over the parent menu-item */
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.click{
+    display:block;
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+   
+   /* Add styles directly here if needed */
+   .search-container {
+    display:flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+.search-box {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+}
+.search-button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+main{
+    height:100%;
+    width: 100%;
+    margin-left:5px;
+    background-color:darkseagreen;
+    
+}
+
+/* Login link styling */
+.login-container {
+    margin-left: auto; /* Pushes login link to the far right */
+}
+
+.login-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+   display:flex;
+   justify-content:flex-end;
+    
+}
+
+/* -------main-------------------- */
+.slide.active active {
+    width:100%;
+    height:100%;
+    cursor: pointer;
+}
+    
+    
+    /* Slider container */
+    .slider-container {
+        margin: 10px;
+        padding: 10px;
+        position:relative;
+        max-width:100%;
+        height: 900px;  /* Adjust according to your design */
+        overflow: hidden;
+
+    }
+
+    /* Slides */
+    .slide {
+        display:inline-flex;
+        width:100%;
+        height:100%;
+        position: absolute;
+        
+        
+    }
+
+    /* Show the first slide initially */
+    .slide.active {
+        display:block;
+        width:100%;
+        height:900px;
+        position: absolute;
+        
+    }
+
+    /* Slide images */
+    .slide img {
+        width: 100%;
+        height: 900px;
+        object-fit:cover;
+        
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* Hover effects for buttons */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Slider navigation dots */
+    .dots {
+        text-align: center;
+        position: absolute;
+        bottom: -600px;
+        width: 100%;
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active-dot {
+        background-color: rgba(255, 255, 255, 1);
+    }
+     
+
+#container{
+    height:100%;
+    width:100%;
+    display:inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.products{
+    position:relative;
+     border: 1px solid cadetblue;
+     left: 15px;
+     margin: 16px;
+    height: 250px;
+    width: 250px;
+    
+}
+.price {
+    margin: -6px 0px -4px 200px;
+    font-size: 24px;
+    font-weight:bold;
+    color: #333;;
+    text-align:justify;
+}
+.name{
+    margin: 0px 100px -23px 64px;
+    font-size: 20px;
+    font-weight:bold;
+    color: #333;;
+    text-align:center;
+    text-transform: capitalize;
+    
+}
+
+
+
+/* -----------footer------------ */
+
+footer{
+    margin-left:5px;
+    background-color:cadetblue;
+    height:100%;
+    width:100%;
+    
+}
+.shop{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform:capitalize;
+    color:white;
+    
+}
+.play{
+    margin:20px;
+    width:200px;
+    height:80px;
+    display:flex;
+    justify-content:flex-end;
+}
+.app{
+    margin:20px;    
+    width:230px;
+    height:80px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+
+#counter1{
+    margin-top: 150px;
+    text-transform:capitalize;
+    color: #000;
+    
+}
+
+
+
+
+
+
+
