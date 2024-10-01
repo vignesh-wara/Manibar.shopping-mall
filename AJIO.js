@@ -34,44 +34,37 @@ function viewCart() {
 
 
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
 
-// Show the current slide
-function showSlide(n) {
-    slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        dots[index].classList.remove('active-dot');
-        if (index === n) {
-            slide.classList.add('active');
-            dots[index].classList.add('active-dot');
-        }
-    });
-}
+let slideIndex = 0;
+showSlides(slideIndex);
 
 // Next/previous controls
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
 
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
 }
 
-// Dot navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
+function showSlides(n) {
+    let slides = document.querySelectorAll('.slide');
+    let dots = document.querySelectorAll('.dot');
+
+    if (n >= slides.length) { slideIndex = 0 }
+    if (n < 0) { slideIndex = slides.length - 1 }
+
+    slides.forEach((slide, i) => {
+        slide.style.display = "none";
+        dots[i].classList.remove('active-dot');
     });
-});
 
-// Auto slide change every 5 seconds
-setInterval(nextSlide,5000);
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add('active-dot');
+}
 
-// Attach events to buttons
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', prevSlide);
+// Auto play slides (optional)
+setInterval(() => {
+    plusSlides(1); // Automatically switch slides every 5 seconds
+}, 5000);
