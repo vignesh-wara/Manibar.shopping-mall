@@ -29,6 +29,11 @@ addToCartButtons.forEach(button => {
 function viewCart() {
     console.log('Cart:', cart);
 }
+
+
+
+
+
    
 // ==========================
 
@@ -66,5 +71,40 @@ function showSlides(n) {
 
 // Auto play slides (optional)
 setInterval(() => {
-    plusSlides(1); // Automatically switch slides every 5 seconds
+ plusSlides(1); // Automatically switch slides every 5 seconds
 }, 5000);
+
+
+    // Function to show products by category
+    function showCategory(category) {
+        const products = document.querySelectorAll('.product');
+        
+        products.forEach(product => {
+            const productCategory = product.getAttribute('data-category');
+            
+            if (productCategory === category) {
+                product.style.display = 'block'; // Show matching category products
+            } else {
+                product.style.display = 'none'; // Hide other category products
+            }
+        });
+    }
+
+    // Event listener for "Menswear" link
+    document.querySelector('a[href="menswear.html"]').addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        showCategory('menswear'); // Show only menswear products
+    });
+
+    // Optionally, you can add similar event listeners for other categories
+    document.querySelector('a[href="womenswear.html"]').addEventListener('click', (event) => {
+        event.preventDefault();
+        showCategory('womenswear'); // Show only womenswear products
+    });
+
+    // Initially, you can hide all products or show a specific category (e.g., homepage items)
+    showCategory('menswear'); // To initially display menswear products on page load
+
+
+
+   
