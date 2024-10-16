@@ -32,12 +32,6 @@ header {
 
 }
 
-#Bar:hover {
-    background-color: wheat;
-
-
-}
-
 .nav {
     display: flex;
     justify-content: flex-start;
@@ -201,7 +195,7 @@ header {
 main {
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 166, 0, 0.486);
+    
 
 }
 
@@ -336,6 +330,7 @@ main {
     margin: 16px;
     height: 250px;
     width: 250px;
+    border-radius: 20px;
 
 }
 
